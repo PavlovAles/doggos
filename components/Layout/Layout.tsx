@@ -32,10 +32,8 @@ const Layout: FC<ILayoutProps> = ({ children }) => {
         {children}
       </main>
       <footer className={styles.footer}>
-        <p>
-          {`"Doggos" by Ales Pavlov with `}
+          {`"Doggos" by Ales Pavlov with`}
           <a href='https://thedogapi.com/' target='_blank' rel='noreferrer noopener'>The Dog API</a>
-        </p>
       </footer>
     </div>
   )

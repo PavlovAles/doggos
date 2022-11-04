@@ -1,0 +1,20 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  background-color: cadetblue;
+}
+
+.footer {
+  margin-top: auto;
+  justify-self: flex-end;
+  display: flex;
+  justify-content: center;
+  background-color: cadetblue;
+}

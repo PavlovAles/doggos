@@ -1,0 +1,43 @@
+@keyframes showButton {
+  0% {
+    display: none;
+    bottom: -20px;
+  }
+  100% {
+    display: block;
+    bottom: 10%;
+  }
+}
+
+.card {
+  width: 100%;
+  height: 450px;
+  padding: 10px 10px 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+
+  &:hover {
+    :global(.ant-btn) {
+      display: block;
+      animation: showButton 1s forwards;
+    }
+  }
+
+  :global(.ant-btn) {
+    position: absolute;
+    display: none;
+    display: none;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

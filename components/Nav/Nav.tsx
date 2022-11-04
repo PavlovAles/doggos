@@ -14,7 +14,7 @@ const Nav = () => {
             bottom: -2px;
             width: 100%;
             height: 1.5px;
-            background-color: black;
+            background-color: #0b004f;
           }
         `}</style>
         <li>

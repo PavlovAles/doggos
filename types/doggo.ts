@@ -1,4 +1,4 @@
-export type TBreeds = {
+export type TBreed = {
   weight: {
     imperial: string;
     metric: string;
@@ -7,7 +7,7 @@ export type TBreeds = {
     imperial: string;
     metric: string;
   };
-  id: number;
+  id: string;
   name: string;
   bred_for: string;
   breed_group: string;
@@ -17,7 +17,7 @@ export type TBreeds = {
 };
 
 export type TRandomDoggo = {
-  breeds: TBreeds | [];
+  breeds: TBreed[];
   id: string;
   url: string;
   width: number;

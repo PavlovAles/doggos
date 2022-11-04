@@ -1,0 +1,8 @@
+.container {
+  width: 100%;
+  max-width: 345px;
+
+  :global(.ant-select) {
+    width: 100%;
+  }
+}

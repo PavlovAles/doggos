@@ -9,11 +9,11 @@ import { getRandomDoggos } from '../utils/api';
 
 import utilStyles from '../styles/utils.module.scss';
 
-interface IHome {
+interface IHomeProps {
   dailyDoggos: TRandomDoggo[]
 }
 
-const Home: FC<IHome> = ({ dailyDoggos }) => {
+const Home: FC<IHomeProps> = ({ dailyDoggos }) => {
   const [doggos, setDoggos] = useState<TRandomDoggo[]>(dailyDoggos);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -47,7 +47,7 @@ const Home: FC<IHome> = ({ dailyDoggos }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<IHomeProps> = async () => {
   const doggos = await getRandomDoggos();
   return {
     props: {

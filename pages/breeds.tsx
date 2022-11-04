@@ -7,6 +7,7 @@ import { getBreeds } from '../utils/api';
 
 import utilStyles from '../styles/utils.module.scss';
 import BreedSearch from '../components/BreedSearch/BreedSearch';
+import BreedInfo from '../components/BreedInfo/BreedInfo';
 
 interface IBreedsProps {
   breeds: TBreed[]
@@ -21,6 +22,7 @@ const Breeds: FC<IBreedsProps> = ({ breeds }) => {
       <section className={utilStyles.section}>
         <h1 className={utilStyles.title}>Find your favorite doggo by breed</h1>
         <BreedSearch breeds={breeds} />
+        <BreedInfo breed={breeds[0]} />
       </section>
     </>
   )

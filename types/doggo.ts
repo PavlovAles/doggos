@@ -1,4 +1,12 @@
 export type TBreed = {
+  id: string;
+  name: string;
+  origin: string;
+  bred_for: string;
+  breed_group: string;
+  life_span: string;
+  temperament: string;
+  reference_image_id: string;
   weight: {
     imperial: string;
     metric: string;
@@ -7,13 +15,9 @@ export type TBreed = {
     imperial: string;
     metric: string;
   };
-  id: string;
-  name: string;
-  bred_for: string;
-  breed_group: string;
-  life_span: string;
-  temperament: string;
-  reference_image_id: string;
+  image: {
+    url: string;
+  };
 };
 
 export type TRandomDoggo = {
@@ -40,7 +44,9 @@ export type TDoggoToPost = {
   sub_id: string;
 };
 
-export function isFavorite(doggo: TRandomDoggo | TFavoriteDoggo): doggo is TFavoriteDoggo {
+export function isFavorite(
+  doggo: TRandomDoggo | TFavoriteDoggo
+): doggo is TFavoriteDoggo {
   if ('sub_id' in doggo && 'image_id' in doggo && 'image' in doggo) {
     return true;
   }

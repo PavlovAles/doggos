@@ -1,0 +1,26 @@
+.article {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+
+  .image-container {
+    width: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      max-height: 400px;
+      object-fit: contain;
+    }
+  }
+
+  @media (max-width: 790px) {
+    flex-wrap: wrap;
+
+    .image-container {
+      width: 100%;
+      max-width: 550px;
+    }
+  }
+}

@@ -1,3 +1,9 @@
+export type TLink = {
+  name: string,
+  link: string
+}
+
+
 export type TBreed = {
   id: string;
   name: string;

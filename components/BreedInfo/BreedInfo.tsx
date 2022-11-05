@@ -8,7 +8,8 @@ import parseBreedInfo from '../../utils/parseBreedInfo';
 
 import styles from './BreedInfo.module.scss';
 
-interface DataType {
+export interface DataType {
+  key: string;
   prop: string;
   value: string;
 }
@@ -37,9 +38,8 @@ const BreedInfo: FC<IBreedInfoProps> = ({ breed }) => (
       showHeader={false}
     />
     <div className={styles['image-container']}>
-      <img src={breed.image.url} alt='breed representative' />
+      <Image src={breed.image.url} fill alt='breed representative' />
     </div>
-    {/* <Image src={breed.image.url} width={250} height={450} alt='breed representative' /> */}
   </article>
 );
 

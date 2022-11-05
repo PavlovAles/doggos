@@ -1,9 +1,5 @@
+import { DataType } from '../components/BreedInfo/BreedInfo';
 import { TBreed } from '../types/doggo';
-
-type DataType = {
-  prop: string,
-  value: string,
-}
 
 export default function parseBreedInfo (breed: TBreed): DataType[] {
   // const res: DataType[] = [];
@@ -18,30 +14,37 @@ export default function parseBreedInfo (breed: TBreed): DataType[] {
   //return res;
   return [
     {
+      key: 'name',
       prop: 'Name',
       value: breed.name
     },
     {
+      key: 'origin',
       prop: 'Origin',
       value: breed.origin,
     },
     {
+      key: 'weight',
       prop: 'Weight, kg',
       value: breed.weight.metric
     },
     {
+      key: 'height',
       prop: 'Height, sm',
       value: breed.height.metric
     },
     {
+      key: 'purpose',
       prop: 'Purpose',
       value: breed.bred_for
     },
     {
+      key: 'lifeSpan',
       prop: 'Life span',
       value: breed.life_span
     },
     {
+      key: 'temperament',
       prop: 'Temperament',
       value: breed.temperament
     },

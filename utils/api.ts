@@ -1,7 +1,7 @@
-import fs from 'fs/promises'
+import fs from 'fs/promises';
 import path from 'path';
 import axios from 'axios';
-import { TBreed, TRandomDoggo } from '../types/doggo';
+import { TBreed, TDoggoToPost, TFavoriteDoggo, TRandomDoggo } from '../types/doggo';
 
 const API_KEY =
   'live_LUURyyogAU5YmTih8fKnVOB2KyF1ABsbspN7u9WSTx0d3LieFcAHZA25AfPtU7mc';
@@ -19,6 +19,16 @@ export function getRandomDoggos() {
       limit: 10,
       size: 'medium',
       order: 'RANDOM',
+    },
+  });
+}
+
+export function getFavoriteDoggos() {
+  return axios<TFavoriteDoggo[]>({
+    url: 'favourites',
+    baseURL: BASE_URL,
+    headers: {
+      'x-api-key': API_KEY,
     },
   });
 }
@@ -48,3 +58,26 @@ export const getCachedBreed = async (
 
   return breeds.find((breed) => breed.name.toLocaleLowerCase() === nameToFind);
 };
+
+export function postDoggo(data: TDoggoToPost) {
+  return axios({
+    url: 'favourites',
+    baseURL: BASE_URL,
+    method: 'POST',
+    headers: {
+      'x-api-key': API_KEY,
+    },
+    data,
+  });
+}
+
+export function deleteDoggo(favoriteId: string) {
+  return axios({
+    url: `favourites/${favoriteId}`,
+    baseURL: BASE_URL,
+    method: 'DELETE',
+    headers: {
+      'x-api-key': API_KEY,
+    },
+  });
+}
